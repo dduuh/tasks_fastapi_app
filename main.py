@@ -13,7 +13,7 @@ async def lifespan(app: FastAPI):
     yield
     print('Disconnected')
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, docs_url='/docs')
 
 app.include_router(
     task,
